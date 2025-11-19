@@ -24,19 +24,26 @@
         .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: var(--accent); }
         
-        /* Hero Section con nueva imagen */
+        /* Hero Section con TU imagen de personas recibiendo paquetes */
         .hero { 
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                       url('https://images.unsplash.com/photo-1581093450334-b9942c8c63b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') 
+                       url('https://image.shutterstock.com/image-photo/hands-holding-brown-paper-box-260nw-2491116697.jpg') 
                        no-repeat center/cover; 
             color: white; 
             padding: 5rem 0; 
             text-align: center; 
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
         }
         
-        .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; }
-        .btn { display: inline-block; background-color: var(--accent); color: var(--dark); padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: all 0.3s; border: none; cursor: pointer; }
+        .hero-content {
+            width: 100%;
+        }
+        
+        .hero h2 { font-size: 2.8rem; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.3rem; max-width: 700px; margin: 0 auto 2.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        .btn { display: inline-block; background-color: var(--accent); color: var(--dark); padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: all 0.3s; border: none; cursor: pointer; font-size: 1.1rem; }
         .btn:hover { background-color: #e6b800; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         
         /* Botón de WhatsApp flotante */
@@ -113,14 +120,15 @@
         .about-text h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 1.5rem; }
         .about-text p { margin-bottom: 1.5rem; color: #555; }
         
-        /* Nueva imagen para Quiénes Somos - tema logístico */
+        /* Nueva imagen para Quiénes Somos - TU imagen de delivery */
         .about-image { 
             background-color: #ddd; 
-            height: 400px; 
+            height: 500px; 
             border-radius: 8px; 
-            background-image: url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-image: url('https://image.shutterstock.com/image-photo/home-delivery-service-working-mind-260nw-2284144281.jpg');
             background-size: cover; 
             background-position: center; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .contact { padding: 5rem 0; background-color: white; }
@@ -168,9 +176,10 @@
             .contact-header { text-align: center; margin-top: 15px; }
             .nav-links { flex-direction: column; align-items: center; }
             .nav-links li { margin: 5px 0; }
-            .hero h2 { font-size: 2rem; }
+            .hero h2 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
             .about-content, .contact-grid { grid-template-columns: 1fr; }
-            .about-image { height: 250px; }
+            .about-image { height: 300px; }
             .whatsapp-float {
                 width: 50px;
                 height: 50px;
@@ -221,13 +230,15 @@
 
     <section class="hero" id="inicio">
         <div class="container">
-            <h2>Conectamos Familias entre Brasil y Cuba</h2>
-            <p>Servicio confiable de envío de paquetes. Llevamos amor y conexión a tus seres queridos en Cuba.</p>
-            <a href="https://wa.me/5591993846438?text=Hola,%20quiero%20información%20sobre%20envíos%20a%20Cuba" 
-               class="btn" 
-               target="_blank">
-               <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
-            </a>
+            <div class="hero-content">
+                <h2>Conectamos Familias entre Brasil y Cuba</h2>
+                <p>Servicio confiable de envío de paquetes. Llevamos amor y conexión a tus seres queridos en Cuba.</p>
+                <a href="https://wa.me/5591993846438?text=Hola,%20quiero%20información%20sobre%20envíos%20a%20Cuba" 
+                   class="btn" 
+                   target="_blank">
+                   <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+                </a>
+            </div>
         </div>
     </section>
 
@@ -359,26 +370,26 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Horario de Atención</h3>
-                            <p>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 9:00 - 13:00</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
                             <i class="fab fa-facebook"></i>
                         </div>
                         <div class="contact-details">
                             <h3>Síguenos en Facebook</h3>
                             <p>
-                                <a href="https://facebook.com/tupagina" 
+                                <a href="https://www.facebook.com/profile.php?id=61562475402847" 
                                    target="_blank" 
-                                   style="color: var(--primary); text-decoration: none;">
+                                   style="color: var(--primary); text-decoration: none; font-weight: bold;">
                                    @CubadirectToursTravel
                                 </a>
                             </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Horario de Atención</h3>
+                            <p>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 9:00 - 13:00</p>
                         </div>
                     </div>
                 </div>
@@ -427,7 +438,7 @@
                 <div class="footer-social">
                     <h4>Síguenos</h4>
                     <div class="social-icons">
-                        <a href="https://facebook.com/tupagina" target="_blank">
+                        <a href="https://www.facebook.com/profile.php?id=61562475402847" target="_blank">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         <a href="https://instagram.com/tucuenta" target="_blank">
