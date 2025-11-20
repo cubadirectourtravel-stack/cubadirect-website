@@ -2,37 +2,121 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0056b3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Cubadirect Tours & Travel - Envíos Brasil-Cuba</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        :root { --primary: #0056b3; --secondary: #d52b1e; --accent: #ffcc00; --dark: #333; --light: #f8f9fa; }
-        body { line-height: 1.6; color: #333; background-color: #f5f5f5; }
-        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
-        header { background: linear-gradient(135deg, var(--primary), #003d82); color: white; padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .header-content { display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; }
-        .logo i { font-size: 2rem; margin-right: 10px; color: var(--accent); }
-        .logo-text h1 { font-size: 1.8rem; margin-bottom: 5px; }
-        .logo-text p { font-size: 0.9rem; opacity: 0.9; }
-        .contact-header { text-align: right; }
-        .contact-header a { color: white; text-decoration: none; display: block; margin-bottom: 5px; }
-        nav { background-color: var(--secondary); padding: 0.8rem 0; }
-        .nav-links { display: flex; list-style: none; justify-content: center; }
-        .nav-links li { margin: 0 15px; }
-        .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+        }
+        :root { 
+            --primary: #0056b3; 
+            --secondary: #d52b1e; 
+            --accent: #ffcc00; 
+            --dark: #333; 
+            --light: #f8f9fa; 
+        }
+        body { 
+            line-height: 1.6; 
+            color: #333; 
+            background-color: #f5f5f5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            overflow-x: hidden;
+        }
+        .container { 
+            width: 90%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 15px; 
+        }
+        header { 
+            background: linear-gradient(135deg, var(--primary), #003d82); 
+            color: white; 
+            padding: 1rem 0; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-content { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo { 
+            display: flex; 
+            align-items: center; 
+        }
+        .logo i { 
+            font-size: 2rem; 
+            margin-right: 10px; 
+            color: var(--accent); 
+        }
+        .logo-text h1 { 
+            font-size: clamp(1.4rem, 4vw, 1.8rem); 
+            margin-bottom: 5px; 
+        }
+        .logo-text p { 
+            font-size: clamp(0.8rem, 3vw, 0.9rem); 
+            opacity: 0.9; 
+        }
+        .contact-header { 
+            text-align: right; 
+        }
+        .contact-header a { 
+            color: white; 
+            text-decoration: none; 
+            display: block; 
+            margin-bottom: 5px;
+            font-size: clamp(0.8rem, 3vw, 1rem);
+        }
         
-        /* Hero Section con TU imagen de personas recibiendo paquetes */
+        /* Navigation optimizada para móvil */
+        nav { 
+            background-color: var(--secondary); 
+            padding: 0.8rem 0; 
+        }
+        .nav-links { 
+            display: flex; 
+            list-style: none; 
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .nav-links li { 
+            margin: 0 8px; 
+        }
+        .nav-links a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: 500; 
+            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .nav-links a:hover { 
+            color: var(--accent); 
+        }
+        
+        /* Hero Section optimizada */
         .hero { 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                       url('https://image.shutterstock.com/image-photo/hands-holding-brown-paper-box-260nw-2491116697.jpg') 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                       url('https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') 
                        no-repeat center/cover; 
             color: white; 
-            padding: 5rem 0; 
+            padding: 4rem 0;
             text-align: center; 
-            min-height: 80vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
         }
@@ -41,160 +125,390 @@
             width: 100%;
         }
         
-        .hero h2 { font-size: 2.8rem; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.3rem; max-width: 700px; margin: 0 auto 2.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
-        .btn { display: inline-block; background-color: var(--accent); color: var(--dark); padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: all 0.3s; border: none; cursor: pointer; font-size: 1.1rem; }
-        .btn:hover { background-color: #e6b800; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .hero h2 { 
+            font-size: clamp(2rem, 6vw, 2.8rem); 
+            margin-bottom: 1.5rem; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+        .hero p { 
+            font-size: clamp(1rem, 4vw, 1.3rem); 
+            max-width: 700px; 
+            margin: 0 auto 2.5rem; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+        }
+        .btn { 
+            display: inline-block; 
+            background-color: var(--accent); 
+            color: var(--dark); 
+            padding: clamp(12px, 4vw, 15px) clamp(25px, 6vw, 35px); 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: all 0.3s; 
+            border: none; 
+            cursor: pointer; 
+            font-size: clamp(1rem, 4vw, 1.1rem);
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn:hover { 
+            background-color: #e6b800; 
+            transform: translateY(-2px); 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+        }
         
-        /* Botón de WhatsApp flotante */
+        /* Botón de WhatsApp optimizado para móvil */
         .whatsapp-float {
             position: fixed;
             width: 60px;
             height: 60px;
-            bottom: 40px;
-            right: 40px;
+            bottom: 20px;
+            right: 20px;
             background-color: #25d366;
             color: white;
-            border-radius: 50px;
+            border-radius: 50%;
             text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s;
+            text-decoration: none;
         }
         .whatsapp-float:hover {
             background-color: #128C7E;
             transform: scale(1.1);
         }
         
-        .services { padding: 5rem 0; background-color: white; }
-        .section-title { text-align: center; margin-bottom: 3rem; }
-        .section-title h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 10px; }
-        .section-title p { color: #666; max-width: 600px; margin: 0 auto; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .service-card { background-color: var(--light); border-radius: 8px; padding: 2rem; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
-        .service-card:hover { transform: translateY(-10px); }
-        .service-icon { font-size: 3rem; color: var(--primary); margin-bottom: 1.5rem; }
-        .service-card h3 { margin-bottom: 1rem; color: var(--dark); }
-        .service-card p { color: #666; margin-bottom: 1.5rem; }
-        .price { font-size: 1.5rem; font-weight: bold; color: var(--secondary); }
+        /* Services section optimizada */
+        .services { 
+            padding: clamp(3rem, 8vw, 5rem) 0; 
+            background-color: white; 
+        }
+        .section-title { 
+            text-align: center; 
+            margin-bottom: clamp(2rem, 6vw, 3rem); 
+        }
+        .section-title h2 { 
+            font-size: clamp(1.8rem, 5vw, 2.2rem); 
+            color: var(--primary); 
+            margin-bottom: 10px; 
+        }
+        .section-title p { 
+            color: #666; 
+            max-width: 600px; 
+            margin: 0 auto;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); 
+            gap: clamp(1.5rem, 4vw, 2rem); 
+        }
+        .service-card { 
+            background-color: var(--light); 
+            border-radius: 12px; 
+            padding: clamp(1.5rem, 4vw, 2rem); 
+            text-align: center; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+            transition: transform 0.3s;
+            border: 1px solid #e9ecef;
+        }
+        .service-card:hover { 
+            transform: translateY(-5px); 
+        }
+        .service-icon { 
+            font-size: clamp(2.5rem, 6vw, 3rem); 
+            color: var(--primary); 
+            margin-bottom: 1.5rem; 
+        }
+        .service-card h3 { 
+            margin-bottom: 1rem; 
+            color: var(--dark);
+            font-size: clamp(1.2rem, 4vw, 1.4rem);
+        }
+        .service-card p { 
+            color: #666; 
+            margin-bottom: 1.5rem;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            line-height: 1.5;
+        }
+        .price { 
+            font-size: clamp(1.3rem, 4vw, 1.5rem); 
+            font-weight: bold; 
+            color: var(--secondary); 
+        }
         
-        /* Sección Misión y Visión */
+        /* Sección Misión y Visión optimizada */
         .mission-vision {
-            padding: 5rem 0;
+            padding: clamp(3rem, 8vw, 5rem) 0;
             background: linear-gradient(135deg, var(--light) 0%, #e8f4ff 100%);
         }
         .mission-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: clamp(1.5rem, 4vw, 2rem);
             margin-top: 2rem;
         }
         .mission-card {
             background: white;
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             text-align: center;
             transition: transform 0.3s;
+            border: 1px solid #e9ecef;
         }
         .mission-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
         .mission-icon {
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 6vw, 3rem);
             color: var(--primary);
             margin-bottom: 1.5rem;
         }
         .mission-card h3 {
             color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: clamp(1.3rem, 4vw, 1.5rem);
+        }
+        .mission-card p {
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            line-height: 1.6;
         }
         
-        .about { padding: 5rem 0; background-color: var(--light); }
-        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-        .about-text h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 1.5rem; }
-        .about-text p { margin-bottom: 1.5rem; color: #555; }
+        /* About section optimizada */
+        .about { 
+            padding: clamp(3rem, 8vw, 5rem) 0; 
+            background-color: var(--light); 
+        }
+        .about-content { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: clamp(2rem, 6vw, 3rem); 
+            align-items: center; 
+        }
+        @media (min-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .about-text h2 { 
+            font-size: clamp(1.8rem, 5vw, 2.2rem); 
+            color: var(--primary); 
+            margin-bottom: 1.5rem; 
+        }
+        .about-text p { 
+            margin-bottom: 1.5rem; 
+            color: #555;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            line-height: 1.6;
+        }
         
-        /* Nueva imagen para Quiénes Somos - TU imagen de delivery */
+        /* Nueva imagen optimizada para Quiénes Somos */
         .about-image { 
             background-color: #ddd; 
-            height: 500px; 
-            border-radius: 8px; 
-            background-image: url('https://image.shutterstock.com/image-photo/home-delivery-service-working-mind-260nw-2284144281.jpg');
+            height: clamp(300px, 50vw, 500px); 
+            border-radius: 12px; 
+            background-image: url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover; 
             background-position: center; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
-        .contact { padding: 5rem 0; background-color: white; }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-        .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
-        .contact-item { display: flex; align-items: flex-start; }
-        .contact-icon { font-size: 1.5rem; color: var(--primary); margin-right: 15px; margin-top: 5px; }
-        .contact-details h3 { margin-bottom: 5px; color: var(--dark); }
-        .contact-form { background-color: var(--light); padding: 2rem; border-radius: 8px; }
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
-        .form-control { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; }
-        textarea.form-control { height: 150px; resize: vertical; }
+        /* Contact section optimizada */
+        .contact { 
+            padding: clamp(3rem, 8vw, 5rem) 0; 
+            background-color: white; 
+        }
+        .contact-grid { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: clamp(2rem, 6vw, 3rem); 
+        }
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .contact-info { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 1.5rem; 
+        }
+        .contact-item { 
+            display: flex; 
+            align-items: flex-start; 
+        }
+        .contact-icon { 
+            font-size: 1.5rem; 
+            color: var(--primary); 
+            margin-right: 15px; 
+            margin-top: 5px; 
+            min-width: 24px;
+        }
+        .contact-details h3 { 
+            margin-bottom: 5px; 
+            color: var(--dark);
+            font-size: clamp(1.1rem, 3vw, 1.2rem);
+        }
+        .contact-details p, 
+        .contact-details a {
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .contact-form { 
+            background-color: var(--light); 
+            padding: clamp(1.5rem, 4vw, 2rem); 
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+        .form-group { 
+            margin-bottom: 1.5rem; 
+        }
+        .form-group label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 500;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .form-control { 
+            width: 100%; 
+            padding: 14px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            font-size: 16px; /* Previene zoom en iOS */
+            min-height: 48px;
+        }
+        textarea.form-control { 
+            height: 140px; 
+            resize: vertical; 
+        }
         
-        footer { background-color: var(--dark); color: white; padding: 3rem 0 1.5rem; }
-        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
-        .footer-logo h3 { color: var(--accent); margin-bottom: 1rem; }
-        .footer-links h4, .footer-social h4 { margin-bottom: 1.5rem; color: var(--accent); }
-        .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color: #ccc; text-decoration: none; transition: color 0.3s; }
-        .footer-links a:hover { color: var(--accent); }
-        .social-icons { display: flex; gap: 15px; }
+        /* Footer optimizado */
+        footer { 
+            background-color: var(--dark); 
+            color: white; 
+            padding: clamp(2rem, 6vw, 3rem) 0 1.5rem; 
+        }
+        .footer-content { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); 
+            gap: clamp(1.5rem, 4vw, 2rem); 
+            margin-bottom: 2rem; 
+        }
+        .footer-logo h3 { 
+            color: var(--accent); 
+            margin-bottom: 1rem;
+            font-size: clamp(1.3rem, 4vw, 1.5rem);
+        }
+        .footer-logo p {
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .footer-links h4, .footer-social h4 { 
+            margin-bottom: 1.5rem; 
+            color: var(--accent);
+            font-size: clamp(1.1rem, 3vw, 1.2rem);
+        }
+        .footer-links ul { 
+            list-style: none; 
+        }
+        .footer-links li { 
+            margin-bottom: 10px; 
+        }
+        .footer-links a { 
+            color: #ccc; 
+            text-decoration: none; 
+            transition: color 0.3s;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .footer-links a:hover { 
+            color: var(--accent); 
+        }
+        .social-icons { 
+            display: flex; 
+            gap: 15px; 
+        }
         .social-icons a { 
             display: inline-flex; 
             align-items: center; 
             justify-content: center; 
-            width: 40px; 
-            height: 40px; 
+            width: 44px; 
+            height: 44px; 
             background-color: rgba(255,255,255,0.1); 
             border-radius: 50%; 
             color: white; 
             text-decoration: none; 
             transition: all 0.3s; 
+            font-size: 1.2rem;
         }
         .social-icons a:hover { 
             background-color: var(--accent); 
             color: var(--dark); 
             transform: translateY(-3px);
         }
-        .copyright { text-align: center; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); color: #aaa; font-size: 0.9rem; }
+        .copyright { 
+            text-align: center; 
+            padding-top: 1.5rem; 
+            border-top: 1px solid rgba(255,255,255,0.1); 
+            color: #aaa; 
+            font-size: clamp(0.8rem, 3vw, 0.9rem); 
+        }
         
+        /* Mejoras específicas para móviles */
         @media (max-width: 768px) {
-            .header-content { flex-direction: column; text-align: center; }
-            .contact-header { text-align: center; margin-top: 15px; }
-            .nav-links { flex-direction: column; align-items: center; }
-            .nav-links li { margin: 5px 0; }
-            .hero h2 { font-size: 2.2rem; }
-            .hero p { font-size: 1.1rem; }
-            .about-content, .contact-grid { grid-template-columns: 1fr; }
-            .about-image { height: 300px; }
+            .header-content { 
+                flex-direction: column; 
+                text-align: center; 
+                gap: 15px;
+            }
+            .contact-header { 
+                text-align: center; 
+                margin-top: 0;
+            }
+            .nav-links { 
+                flex-direction: column; 
+                align-items: center;
+                gap: 5px;
+            }
+            .nav-links li { 
+                margin: 2px 0; 
+            }
+            .hero {
+                padding: 3rem 0;
+                min-height: 70vh;
+            }
             .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
+                width: 55px;
+                height: 55px;
+                bottom: 15px;
+                right: 15px;
                 font-size: 25px;
+            }
+        }
+
+        /* Prevenir zoom en inputs en iOS */
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            select,
+            textarea,
+            input {
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Botón flotante de WhatsApp -->
+    <!-- Botón flotante de WhatsApp optimizado -->
     <a href="https://wa.me/5591993846438?text=Hola,%20me%20interesan%20sus%20servicios%20de%20envíos%20a%20Cuba" 
        class="whatsapp-float" 
-       target="_blank">
+       target="_blank"
+       aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -281,7 +595,6 @@
         </div>
     </section>
 
-    <!-- Nueva Sección Misión y Visión -->
     <section class="mission-vision" id="mision">
         <div class="container">
             <div class="section-title">
@@ -438,13 +751,13 @@
                 <div class="footer-social">
                     <h4>Síguenos</h4>
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/profile.php?id=61562475402847" target="_blank">
+                        <a href="https://www.facebook.com/profile.php?id=61562475402847" target="_blank" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://instagram.com/tucuenta" target="_blank">
+                        <a href="https://instagram.com/tucuenta" target="_blank" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/5591993846438" target="_blank">
+                        <a href="https://wa.me/5591993846438" target="_blank" aria-label="WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -464,12 +777,14 @@
     </footer>
 
     <script>
+        // Prevenir envío del formulario y mostrar mensaje
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto por WhatsApp o teléfono.');
             this.reset();
         });
         
+        // Smooth scrolling optimizado para móviles
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -484,6 +799,1621 @@
                 }
             });
         });
+
+        // Mejorar rendimiento en móviles
+        document.addEventListener('touchstart', function() {}, {passive: true});
     </script>
 </body>
-</html>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0056b3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Cubadirect Tours & Travel - Envíos Brasil-Cuba</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+        }
+        :root { 
+            --primary: #0056b3; 
+            --secondary: #d52b1e; 
+            --accent: #ffcc00; 
+            --dark: #333; 
+            --light: #f8f9fa; 
+        }
+        body { 
+            line-height: 1.6; 
+            color: #333; 
+            background-color: #f5f5f5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            overflow-x: hidden;
+        }
+        .container { 
+            width: 90%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 15px; 
+        }
+        header { 
+            background: linear-gradient(135deg, var(--primary), #003d82); 
+            color: white; 
+            padding: 1rem 0; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-content { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo { 
+            display: flex; 
+            align-items: center; 
+        }
+        .logo i { 
+            font-size: 2rem; 
+            margin-right: 10px; 
+            color: var(--accent); 
+        }
+        .logo-text h1 { 
+            font-size: clamp(1.4rem, 4vw, 1.8rem); 
+            margin-bottom: 5px; 
+        }
+        .logo-text p { 
+            font-size: clamp(0.8rem, 3vw, 0.9rem); 
+            opacity: 0.9; 
+        }
+        .contact-header { 
+            text-align: right; 
+        }
+        .contact-header a { 
+            color: white; 
+            text-decoration: none; 
+            display: block; 
+            margin-bottom: 5px;
+            font-size: clamp(0.8rem, 3vw, 1rem);
+        }
+        
+        /* Navigation optimizada para móvil */
+        nav { 
+            background-color: var(--secondary); 
+            padding: 0.8rem 0; 
+        }
+        .nav-links { 
+            display: flex; 
+            list-style: none; 
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .nav-links li { 
+            margin: 0 8px; 
+        }
+        .nav-links a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: 500; 
+            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .nav-links a:hover { 
+            color: var(--accent); 
+        }
+        
+        /* Hero Section optimizada */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                       url('https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') 
+                       no-repeat center/cover; 
+            color: white; 
+            padding: 4rem 0;
+            text-align: center; 
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            width: 100%;
+        }
+        
+        .hero h2 { 
+            font-size: clamp(2rem, 6vw, 2.8rem); 
+            margin-bottom: 1.5rem; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+        .hero p { 
+            font-size: clamp(1rem, 4vw, 1.3rem); 
+            max-width: 700px; 
+            margin: 0 auto 2.5rem; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+        }
+        .btn { 
+            display: inline-block; 
+            background-color: var(--accent); 
+            color: var(--dark); 
+            padding: clamp(12px, 4vw, 15px) clamp(25px, 6vw, 35px); 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: all 0.3s; 
+            border: none; 
+            cursor: pointer; 
+            font-size: clamp(1rem, 4vw, 1.1rem);
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn:hover { 
+            background-color: #e6b800; 
+            transform: translateY(-2px); 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+        }
+        
+        /* Botón de WhatsApp optimizado para móvil */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        /* Services section optimizada */
+        .services { 
+            padding: clamp(3rem, 8vw, 5rem) 0; 
+            background-color: white; 
+        }
+        .section-title { 
+            text-align: center; 
+            margin-bottom: clamp(2rem, 6vw, 3rem); 
+        }
+        .section-title h2 { 
+            font-size: clamp(1.8rem, 5vw, 2.2rem); 
+            color: var(--primary); 
+            margin-bottom: 10px; 
+        }
+        .section-title p { 
+            color: #666; 
+            max-width: 600px; 
+            margin: 0 auto;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); 
+            gap: clamp(1.5rem, 4vw, 2rem); 
+        }
+        .service-card { 
+            background-color: var(--light); 
+            border-radius: 12px; 
+            padding: clamp(1.5rem, 4vw, 2rem); 
+            text-align: center; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+            transition: transform 0.3s;
+            border: 1px solid #e9ecef;
+        }
+        .service-card:hover { 
+            transform: translateY(-5px); 
+        }
+        .service-icon { 
+            font-size: clamp(2.5rem, 6vw, 3rem); 
+            color: var(--primary); 
+            margin-bottom: 1.5rem; 
+        }
+        .service-card h3 { 
+            margin-bottom: 1rem; 
+            color: var(--dark);
+            font-size: clamp(1.2rem, 4vw, 1.4rem);
+        }
+        .service-card p { 
+            color: #666; 
+            margin-bottom: 1.5rem;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            line-height: 1.5;
+        }
+        .price { 
+            font-size: clamp(1.3rem, 4vw, 1.5rem); 
+            font-weight: bold; 
+            color: var(--secondary); 
+        }
+        
+        /* Sección Misión y Visión optimizada */
+        .mission-vision {
+            padding: clamp(3rem, 8vw, 5rem) 0;
+            background: linear-gradient(135deg, var(--light) 0%, #e8f4ff 100%);
+        }
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: clamp(1.5rem, 4vw, 2rem);
+            margin-top: 2rem;
+        }
+        .mission-card {
+            background: white;
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid #e9ecef;
+        }
+        .mission-card:hover {
+            transform: translateY(-3px);
+        }
+        .mission-icon {
+            font-size: clamp(2.5rem, 6vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .mission-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: clamp(1.3rem, 4vw, 1.5rem);
+        }
+        .mission-card p {
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            line-height: 1.6;
+        }
+        
+        /* About section optimizada */
+        .about { 
+            padding: clamp(3rem, 8vw, 5rem) 0; 
+            background-color: var(--light); 
+        }
+        .about-content { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: clamp(2rem, 6vw, 3rem); 
+            align-items: center; 
+        }
+        @media (min-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .about-text h2 { 
+            font-size: clamp(1.8rem, 5vw, 2.2rem); 
+            color: var(--primary); 
+            margin-bottom: 1.5rem; 
+        }
+        .about-text p { 
+            margin-bottom: 1.5rem; 
+            color: #555;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            line-height: 1.6;
+        }
+        
+        /* Nueva imagen optimizada para Quiénes Somos */
+        .about-image { 
+            background-color: #ddd; 
+            height: clamp(300px, 50vw, 500px); 
+            border-radius: 12px; 
+            background-image: url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover; 
+            background-position: center; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Contact section optimizada */
+        .contact { 
+            padding: clamp(3rem, 8vw, 5rem) 0; 
+            background-color: white; 
+        }
+        .contact-grid { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: clamp(2rem, 6vw, 3rem); 
+        }
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .contact-info { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 1.5rem; 
+        }
+        .contact-item { 
+            display: flex; 
+            align-items: flex-start; 
+        }
+        .contact-icon { 
+            font-size: 1.5rem; 
+            color: var(--primary); 
+            margin-right: 15px; 
+            margin-top: 5px; 
+            min-width: 24px;
+        }
+        .contact-details h3 { 
+            margin-bottom: 5px; 
+            color: var(--dark);
+            font-size: clamp(1.1rem, 3vw, 1.2rem);
+        }
+        .contact-details p, 
+        .contact-details a {
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .contact-form { 
+            background-color: var(--light); 
+            padding: clamp(1.5rem, 4vw, 2rem); 
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+        .form-group { 
+            margin-bottom: 1.5rem; 
+        }
+        .form-group label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 500;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .form-control { 
+            width: 100%; 
+            padding: 14px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            font-size: 16px; /* Previene zoom en iOS */
+            min-height: 48px;
+        }
+        textarea.form-control { 
+            height: 140px; 
+            resize: vertical; 
+        }
+        
+        /* Footer optimizado */
+        footer { 
+            background-color: var(--dark); 
+            color: white; 
+            padding: clamp(2rem, 6vw, 3rem) 0 1.5rem; 
+        }
+        .footer-content { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); 
+            gap: clamp(1.5rem, 4vw, 2rem); 
+            margin-bottom: 2rem; 
+        }
+        .footer-logo h3 { 
+            color: var(--accent); 
+            margin-bottom: 1rem;
+            font-size: clamp(1.3rem, 4vw, 1.5rem);
+        }
+        .footer-logo p {
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .footer-links h4, .footer-social h4 { 
+            margin-bottom: 1.5rem; 
+            color: var(--accent);
+            font-size: clamp(1.1rem, 3vw, 1.2rem);
+        }
+        .footer-links ul { 
+            list-style: none; 
+        }
+        .footer-links li { 
+            margin-bottom: 10px; 
+        }
+        .footer-links a { 
+            color: #ccc; 
+            text-decoration: none; 
+            transition: color 0.3s;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .footer-links a:hover { 
+            color: var(--accent); 
+        }
+        .social-icons { 
+            display: flex; 
+            gap: 15px; 
+        }
+        .social-icons a { 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            width: 44px; 
+            height: 44px; 
+            background-color: rgba(255,255,255,0.1); 
+            border-radius: 50%; 
+            color: white; 
+            text-decoration: none; 
+            transition: all 0.3s; 
+            font-size: 1.2rem;
+        }
+        .social-icons a:hover { 
+            background-color: var(--accent); 
+            color: var(--dark); 
+            transform: translateY(-3px);
+        }
+        .copyright { 
+            text-align: center; 
+            padding-top: 1.5rem; 
+            border-top: 1px solid rgba(255,255,255,0.1); 
+            color: #aaa; 
+            font-size: clamp(0.8rem, 3vw, 0.9rem); 
+        }
+        
+        /* Mejoras específicas para móviles */
+        @media (max-width: 768px) {
+            .header-content { 
+                flex-direction: column; 
+                text-align: center; 
+                gap: 15px;
+            }
+            .contact-header { 
+                text-align: center; 
+                margin-top: 0;
+            }
+            .nav-links { 
+                flex-direction: column; 
+                align-items: center;
+                gap: 5px;
+            }
+            .nav-links li { 
+                margin: 2px 0; 
+            }
+            .hero {
+                padding: 3rem 0;
+                min-height: 70vh;
+            }
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 25px;
+            }
+        }
+
+        /* Prevenir zoom en inputs en iOS */
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            select,
+            textarea,
+            input {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón flotante de WhatsApp optimizado -->
+    <a href="https://wa.me/5591993846438?text=Hola,%20me%20interesan%20sus%20servicios%20de%20envíos%20a%20Cuba" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shipping-fast"></i>
+                    <div class="logo-text">
+                        <h1>Cubadirect Tours & Travel</h1>
+                        <p>Cerca de los tuyos, siempre.</p>
+                    </div>
+                </div>
+                <div class="contact-header">
+                    <a href="tel:+5591993846438"><i class="fas fa-phone"></i> +55 91 99384-6438</a>
+                    <a href="mailto:cubadirectourtravel@gmail.com"><i class="fas fa-envelope"></i> cubadirectourtravel@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#mision">Misión y Visión</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Conectamos Familias entre Brasil y Cuba</h2>
+                <p>Servicio confiable de envío de paquetes. Llevamos amor y conexión a tus seres queridos en Cuba.</p>
+                <a href="https://wa.me/5591993846438?text=Hola,%20quiero%20información%20sobre%20envíos%20a%20Cuba" 
+                   class="btn" 
+                   target="_blank">
+                   <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+                <p>Ofrecemos soluciones logísticas completas para tus envíos entre Brasil y Cuba</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h3>Envíos a Cuba</h3>
+                    <p>Envía paquetes desde Brasil hacia Cuba de forma segura y confiable. Llevamos lo que necesitas a tu familia.</p>
+                    <div class="price">125 reales/kg</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Envíos desde Cuba</h3>
+                    <p>Recibe paquetes desde Cuba en Brasil con nuestro servicio especializado y atención personalizada.</p>
+                    <div class="price">125 reales/kg</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Seguimiento y Soporte</h3>
+                    <p>Ofrecemos seguimiento en tiempo real y atención personalizada para cada envío. Tu tranquilidad es nuestra prioridad.</p>
+                    <a href="https://wa.me/5591993846438?text=Hola,%20necesito%20seguimiento%20de%20un%20paquete" 
+                       class="btn" 
+                       target="_blank">
+                       Consultar Estado
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-vision" id="mision">
+        <div class="container">
+            <div class="section-title">
+                <h2>Misión y Visión</h2>
+                <p>Nuestro compromiso con la excelencia en el servicio</p>
+            </div>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Nuestra Misión</h3>
+                    <p>Conectar familias y amigos entre Brasil y Cuba a través de un servicio de envío confiable, seguro y eficiente. Facilitar la comunicación y el envío de afectos mediante soluciones logísticas de calidad.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Nuestra Visión</h3>
+                    <p>Ser la empresa líder en servicios logísticos entre Brasil y Cuba, reconocida por nuestra confiabilidad, transparencia y compromiso con la satisfacción total de nuestros clientes.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Nuestros Valores</h3>
+                    <p>Confianza, responsabilidad, transparencia y compromiso. Cada paquete representa la conexión entre seres queridos, y tratamos cada envío con el cuidado y respeto que merece.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Quiénes Somos</h2>
+                    <p>En <strong>Cubadirect Tours & Travel</strong> somos especialistas en logística internacional entre Brasil y Cuba. Contamos con años de experiencia en el sector de transporte y envío de paquetes.</p>
+                    <p>Nuestro equipo está compuesto por profesionales comprometidos con brindar un servicio excepcional. Entendemos la importancia de cada envío y nos dedicamos a garantizar que llegue seguro y a tiempo.</p>
+                    <p>Utilizamos procesos logísticos optimizados y mantenemos comunicación constante con nuestros clientes, ofreciendo transparencia y confianza en cada etapa del proceso.</p>
+                    <a href="https://wa.me/5591993846438?text=Hola,%20quiero%20conocer%20más%20sobre%20ustedes" 
+                       class="btn" 
+                       target="_blank">
+                       Conoce más de nosotros
+                    </a>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contáctanos</h2>
+                <p>Estamos aquí para ayudarte con tus envíos entre Brasil y Cuba</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Dirección</h3>
+                            <p>Rua Agostinho Camilo Marques 45<br>Municipio Mairipora, Sao Paulo, Brasil</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Teléfono/WhatsApp</h3>
+                            <p>+55 91 99384-6438</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>cubadirectourtravel@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Síguenos en Facebook</h3>
+                            <p>
+                                <a href="https://www.facebook.com/profile.php?id=61562475402847" 
+                                   target="_blank" 
+                                   style="color: var(--primary); text-decoration: none; font-weight: bold;">
+                                   @CubadirectToursTravel
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Horario de Atención</h3>
+                            <p>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 9:00 - 13:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre completo</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono/WhatsApp</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" class="form-control" placeholder="Describe tu solicitud de envío, destino, tipo de paquete..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Cubadirect Tours & Travel</h3>
+                    <p>Cerca de los tuyos, siempre. Servicio confiable de envíos entre Brasil y Cuba.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#mision">Misión y Visión</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61562475402847" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/tucuenta" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5591993846438" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: #ccc;">
+                        ¡Escríbenos directamente!
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Cubadirect Tours & Travel. Todos los derechos reservados. | 
+                   <a href="https://wa.me/5591993846438" style="color: var(--accent); text-decoration: none;" target="_blank">
+                       WhatsApp: +55 91 99384-6438
+                   </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Prevenir envío del formulario y mostrar mensaje
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto por WhatsApp o teléfono.');
+            this.reset();
+        });
+        
+        // Smooth scrolling optimizado para móviles
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mejorar rendimiento en móviles
+        document.addEventListener('touchstart', function() {}, {passive: true});
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0056b3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Cubadirect Tours & Travel - Envíos Brasil-Cuba</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+        }
+        :root { 
+            --primary: #0056b3; 
+            --secondary: #d52b1e; 
+            --accent: #ffcc00; 
+            --dark: #333; 
+            --light: #f8f9fa; 
+        }
+        body { 
+            line-height: 1.6; 
+            color: #333; 
+            background-color: #f5f5f5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            overflow-x: hidden;
+        }
+        .container { 
+            width: 90%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 15px; 
+        }
+        header { 
+            background: linear-gradient(135deg, var(--primary), #003d82); 
+            color: white; 
+            padding: 1rem 0; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-content { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo { 
+            display: flex; 
+            align-items: center; 
+        }
+        .logo i { 
+            font-size: 2rem; 
+            margin-right: 10px; 
+            color: var(--accent); 
+        }
+        .logo-text h1 { 
+            font-size: clamp(1.4rem, 4vw, 1.8rem); 
+            margin-bottom: 5px; 
+        }
+        .logo-text p { 
+            font-size: clamp(0.8rem, 3vw, 0.9rem); 
+            opacity: 0.9; 
+        }
+        .contact-header { 
+            text-align: right; 
+        }
+        .contact-header a { 
+            color: white; 
+            text-decoration: none; 
+            display: block; 
+            margin-bottom: 5px;
+            font-size: clamp(0.8rem, 3vw, 1rem);
+        }
+        
+        /* Navigation optimizada para móvil */
+        nav { 
+            background-color: var(--secondary); 
+            padding: 0.8rem 0; 
+        }
+        .nav-links { 
+            display: flex; 
+            list-style: none; 
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .nav-links li { 
+            margin: 0 8px; 
+        }
+        .nav-links a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: 500; 
+            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .nav-links a:hover { 
+            color: var(--accent); 
+        }
+        
+        /* Hero Section optimizada */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                       url('https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') 
+                       no-repeat center/cover; 
+            color: white; 
+            padding: 4rem 0;
+            text-align: center; 
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            width: 100%;
+        }
+        
+        .hero h2 { 
+            font-size: clamp(2rem, 6vw, 2.8rem); 
+            margin-bottom: 1.5rem; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+        .hero p { 
+            font-size: clamp(1rem, 4vw, 1.3rem); 
+            max-width: 700px; 
+            margin: 0 auto 2.5rem; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.4;
+        }
+        .btn { 
+            display: inline-block; 
+            background-color: var(--accent); 
+            color: var(--dark); 
+            padding: clamp(12px, 4vw, 15px) clamp(25px, 6vw, 35px); 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: all 0.3s; 
+            border: none; 
+            cursor: pointer; 
+            font-size: clamp(1rem, 4vw, 1.1rem);
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn:hover { 
+            background-color: #e6b800; 
+            transform: translateY(-2px); 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+        }
+        
+        /* Botón de WhatsApp optimizado para móvil */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        /* Services section optimizada */
+        .services { 
+            padding: clamp(3rem, 8vw, 5rem) 0; 
+            background-color: white; 
+        }
+        .section-title { 
+            text-align: center; 
+            margin-bottom: clamp(2rem, 6vw, 3rem); 
+        }
+        .section-title h2 { 
+            font-size: clamp(1.8rem, 5vw, 2.2rem); 
+            color: var(--primary); 
+            margin-bottom: 10px; 
+        }
+        .section-title p { 
+            color: #666; 
+            max-width: 600px; 
+            margin: 0 auto;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); 
+            gap: clamp(1.5rem, 4vw, 2rem); 
+        }
+        .service-card { 
+            background-color: var(--light); 
+            border-radius: 12px; 
+            padding: clamp(1.5rem, 4vw, 2rem); 
+            text-align: center; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+            transition: transform 0.3s;
+            border: 1px solid #e9ecef;
+        }
+        .service-card:hover { 
+            transform: translateY(-5px); 
+        }
+        .service-icon { 
+            font-size: clamp(2.5rem, 6vw, 3rem); 
+            color: var(--primary); 
+            margin-bottom: 1.5rem; 
+        }
+        .service-card h3 { 
+            margin-bottom: 1rem; 
+            color: var(--dark);
+            font-size: clamp(1.2rem, 4vw, 1.4rem);
+        }
+        .service-card p { 
+            color: #666; 
+            margin-bottom: 1.5rem;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            line-height: 1.5;
+        }
+        .price { 
+            font-size: clamp(1.3rem, 4vw, 1.5rem); 
+            font-weight: bold; 
+            color: var(--secondary); 
+        }
+        
+        /* Sección Misión y Visión optimizada */
+        .mission-vision {
+            padding: clamp(3rem, 8vw, 5rem) 0;
+            background: linear-gradient(135deg, var(--light) 0%, #e8f4ff 100%);
+        }
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: clamp(1.5rem, 4vw, 2rem);
+            margin-top: 2rem;
+        }
+        .mission-card {
+            background: white;
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid #e9ecef;
+        }
+        .mission-card:hover {
+            transform: translateY(-3px);
+        }
+        .mission-icon {
+            font-size: clamp(2.5rem, 6vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .mission-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: clamp(1.3rem, 4vw, 1.5rem);
+        }
+        .mission-card p {
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            line-height: 1.6;
+        }
+        
+        /* About section optimizada */
+        .about { 
+            padding: clamp(3rem, 8vw, 5rem) 0; 
+            background-color: var(--light); 
+        }
+        .about-content { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: clamp(2rem, 6vw, 3rem); 
+            align-items: center; 
+        }
+        @media (min-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .about-text h2 { 
+            font-size: clamp(1.8rem, 5vw, 2.2rem); 
+            color: var(--primary); 
+            margin-bottom: 1.5rem; 
+        }
+        .about-text p { 
+            margin-bottom: 1.5rem; 
+            color: #555;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            line-height: 1.6;
+        }
+        
+        /* Nueva imagen optimizada para Quiénes Somos */
+        .about-image { 
+            background-color: #ddd; 
+            height: clamp(300px, 50vw, 500px); 
+            border-radius: 12px; 
+            background-image: url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover; 
+            background-position: center; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Contact section optimizada */
+        .contact { 
+            padding: clamp(3rem, 8vw, 5rem) 0; 
+            background-color: white; 
+        }
+        .contact-grid { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: clamp(2rem, 6vw, 3rem); 
+        }
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .contact-info { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 1.5rem; 
+        }
+        .contact-item { 
+            display: flex; 
+            align-items: flex-start; 
+        }
+        .contact-icon { 
+            font-size: 1.5rem; 
+            color: var(--primary); 
+            margin-right: 15px; 
+            margin-top: 5px; 
+            min-width: 24px;
+        }
+        .contact-details h3 { 
+            margin-bottom: 5px; 
+            color: var(--dark);
+            font-size: clamp(1.1rem, 3vw, 1.2rem);
+        }
+        .contact-details p, 
+        .contact-details a {
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .contact-form { 
+            background-color: var(--light); 
+            padding: clamp(1.5rem, 4vw, 2rem); 
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+        .form-group { 
+            margin-bottom: 1.5rem; 
+        }
+        .form-group label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 500;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .form-control { 
+            width: 100%; 
+            padding: 14px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            font-size: 16px; /* Previene zoom en iOS */
+            min-height: 48px;
+        }
+        textarea.form-control { 
+            height: 140px; 
+            resize: vertical; 
+        }
+        
+        /* Footer optimizado */
+        footer { 
+            background-color: var(--dark); 
+            color: white; 
+            padding: clamp(2rem, 6vw, 3rem) 0 1.5rem; 
+        }
+        .footer-content { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); 
+            gap: clamp(1.5rem, 4vw, 2rem); 
+            margin-bottom: 2rem; 
+        }
+        .footer-logo h3 { 
+            color: var(--accent); 
+            margin-bottom: 1rem;
+            font-size: clamp(1.3rem, 4vw, 1.5rem);
+        }
+        .footer-logo p {
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .footer-links h4, .footer-social h4 { 
+            margin-bottom: 1.5rem; 
+            color: var(--accent);
+            font-size: clamp(1.1rem, 3vw, 1.2rem);
+        }
+        .footer-links ul { 
+            list-style: none; 
+        }
+        .footer-links li { 
+            margin-bottom: 10px; 
+        }
+        .footer-links a { 
+            color: #ccc; 
+            text-decoration: none; 
+            transition: color 0.3s;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+        .footer-links a:hover { 
+            color: var(--accent); 
+        }
+        .social-icons { 
+            display: flex; 
+            gap: 15px; 
+        }
+        .social-icons a { 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            width: 44px; 
+            height: 44px; 
+            background-color: rgba(255,255,255,0.1); 
+            border-radius: 50%; 
+            color: white; 
+            text-decoration: none; 
+            transition: all 0.3s; 
+            font-size: 1.2rem;
+        }
+        .social-icons a:hover { 
+            background-color: var(--accent); 
+            color: var(--dark); 
+            transform: translateY(-3px);
+        }
+        .copyright { 
+            text-align: center; 
+            padding-top: 1.5rem; 
+            border-top: 1px solid rgba(255,255,255,0.1); 
+            color: #aaa; 
+            font-size: clamp(0.8rem, 3vw, 0.9rem); 
+        }
+        
+        /* Mejoras específicas para móviles */
+        @media (max-width: 768px) {
+            .header-content { 
+                flex-direction: column; 
+                text-align: center; 
+                gap: 15px;
+            }
+            .contact-header { 
+                text-align: center; 
+                margin-top: 0;
+            }
+            .nav-links { 
+                flex-direction: column; 
+                align-items: center;
+                gap: 5px;
+            }
+            .nav-links li { 
+                margin: 2px 0; 
+            }
+            .hero {
+                padding: 3rem 0;
+                min-height: 70vh;
+            }
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 25px;
+            }
+        }
+
+        /* Prevenir zoom en inputs en iOS */
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            select,
+            textarea,
+            input {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón flotante de WhatsApp optimizado -->
+    <a href="https://wa.me/5591993846438?text=Hola,%20me%20interesan%20sus%20servicios%20de%20envíos%20a%20Cuba" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shipping-fast"></i>
+                    <div class="logo-text">
+                        <h1>Cubadirect Tours & Travel</h1>
+                        <p>Cerca de los tuyos, siempre.</p>
+                    </div>
+                </div>
+                <div class="contact-header">
+                    <a href="tel:+5591993846438"><i class="fas fa-phone"></i> +55 91 99384-6438</a>
+                    <a href="mailto:cubadirectourtravel@gmail.com"><i class="fas fa-envelope"></i> cubadirectourtravel@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#mision">Misión y Visión</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Conectamos Familias entre Brasil y Cuba</h2>
+                <p>Servicio confiable de envío de paquetes. Llevamos amor y conexión a tus seres queridos en Cuba.</p>
+                <a href="https://wa.me/5591993846438?text=Hola,%20quiero%20información%20sobre%20envíos%20a%20Cuba" 
+                   class="btn" 
+                   target="_blank">
+                   <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+                <p>Ofrecemos soluciones logísticas completas para tus envíos entre Brasil y Cuba</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h3>Envíos a Cuba</h3>
+                    <p>Envía paquetes desde Brasil hacia Cuba de forma segura y confiable. Llevamos lo que necesitas a tu familia.</p>
+                    <div class="price">125 reales/kg</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Envíos desde Cuba</h3>
+                    <p>Recibe paquetes desde Cuba en Brasil con nuestro servicio especializado y atención personalizada.</p>
+                    <div class="price">125 reales/kg</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Seguimiento y Soporte</h3>
+                    <p>Ofrecemos seguimiento en tiempo real y atención personalizada para cada envío. Tu tranquilidad es nuestra prioridad.</p>
+                    <a href="https://wa.me/5591993846438?text=Hola,%20necesito%20seguimiento%20de%20un%20paquete" 
+                       class="btn" 
+                       target="_blank">
+                       Consultar Estado
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-vision" id="mision">
+        <div class="container">
+            <div class="section-title">
+                <h2>Misión y Visión</h2>
+                <p>Nuestro compromiso con la excelencia en el servicio</p>
+            </div>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Nuestra Misión</h3>
+                    <p>Conectar familias y amigos entre Brasil y Cuba a través de un servicio de envío confiable, seguro y eficiente. Facilitar la comunicación y el envío de afectos mediante soluciones logísticas de calidad.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Nuestra Visión</h3>
+                    <p>Ser la empresa líder en servicios logísticos entre Brasil y Cuba, reconocida por nuestra confiabilidad, transparencia y compromiso con la satisfacción total de nuestros clientes.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Nuestros Valores</h3>
+                    <p>Confianza, responsabilidad, transparencia y compromiso. Cada paquete representa la conexión entre seres queridos, y tratamos cada envío con el cuidado y respeto que merece.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Quiénes Somos</h2>
+                    <p>En <strong>Cubadirect Tours & Travel</strong> somos especialistas en logística internacional entre Brasil y Cuba. Contamos con años de experiencia en el sector de transporte y envío de paquetes.</p>
+                    <p>Nuestro equipo está compuesto por profesionales comprometidos con brindar un servicio excepcional. Entendemos la importancia de cada envío y nos dedicamos a garantizar que llegue seguro y a tiempo.</p>
+                    <p>Utilizamos procesos logísticos optimizados y mantenemos comunicación constante con nuestros clientes, ofreciendo transparencia y confianza en cada etapa del proceso.</p>
+                    <a href="https://wa.me/5591993846438?text=Hola,%20quiero%20conocer%20más%20sobre%20ustedes" 
+                       class="btn" 
+                       target="_blank">
+                       Conoce más de nosotros
+                    </a>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contáctanos</h2>
+                <p>Estamos aquí para ayudarte con tus envíos entre Brasil y Cuba</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Dirección</h3>
+                            <p>Rua Agostinho Camilo Marques 45<br>Municipio Mairipora, Sao Paulo, Brasil</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Teléfono/WhatsApp</h3>
+                            <p>+55 91 99384-6438</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>cubadirectourtravel@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Síguenos en Facebook</h3>
+                            <p>
+                                <a href="https://www.facebook.com/profile.php?id=61562475402847" 
+                                   target="_blank" 
+                                   style="color: var(--primary); text-decoration: none; font-weight: bold;">
+                                   @CubadirectToursTravel
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Horario de Atención</h3>
+                            <p>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 9:00 - 13:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre completo</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono/WhatsApp</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" class="form-control" placeholder="Describe tu solicitud de envío, destino, tipo de paquete..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Cubadirect Tours & Travel</h3>
+                    <p>Cerca de los tuyos, siempre. Servicio confiable de envíos entre Brasil y Cuba.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#mision">Misión y Visión</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61562475402847" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/tucuenta" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5591993846438" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: #ccc;">
+                        ¡Escríbenos directamente!
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Cubadirect Tours & Travel. Todos los derechos reservados. | 
+                   <a href="https://wa.me/5591993846438" style="color: var(--accent); text-decoration: none;" target="_blank">
+                       WhatsApp: +55 91 99384-6438
+                   </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Prevenir envío del formulario y mostrar mensaje
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto por WhatsApp o teléfono.');
+            this.reset();
+        });
+        
+        // Smooth scrolling optimizado para móviles
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mejorar rendimiento en móviles
+        document.addEventListener('touchstart', function() {}, {passive: true});
+    </script>
+</body>
+</html>   
